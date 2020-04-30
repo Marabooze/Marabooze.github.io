@@ -1,0 +1,124 @@
+
+.head {
+    
+    background-color: #266874;
+    height:50%;
+    width: 100%;
+    padding: 0px;
+    position: relative;
+    z-index: 999;
+    
+}
+
+body {
+    background-image: url(img/Background2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+.menu--links {
+    
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #266874;
+    padding: 10px;
+    animation: menuanimcolor 10s ;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+} 
+.menu {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+.menu li {
+    display: flex;
+    align-items: center;
+    
+    
+}
+li a {
+    text-decoration: none;
+    color: #ccc100;
+    font-size: 25px;
+    font-family: "Open-Sans", Arial, sans-serif;
+}
+.menu--logo {
+    border-radius: 50%;
+    border: 2px dashed #ccc100;
+    height: 150px;
+}
+
+.main {
+    margin-left: auto;
+    margin-right: auto;
+    .background-block-1 {
+        background-color: rgb(180, 77, 80, 1);
+        width: 100%;
+        position: relative;
+        .background-image-1 {
+            width: 50%;
+            border: 2px solid yellow;
+            text-align: center;
+            align-self: flex-end;
+            img {
+                display: inline-block;
+                height: 100vh;
+                border: 2px solid green;
+            }    
+        }
+        
+        .logo {
+            width: 100%;
+            border: 2px solid deepskyblue;
+            position: absolute;
+            .logo-font {
+                width: 350px;
+                height: 143px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 30px 0;
+                background-image: url(img/method-draw-image.svg);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: bottom;
+
+                .ahoodie {
+                    font-family: "selimaregular", Arial, sans-serif;
+                    font-size: 70px;
+                    color: #ccc100;
+                    text-align: center;
+                    transform: rotate(-4deg);
+                    height: 60px;
+                }
+                .net {
+                    position: absolute;
+                    font-family: "Open-Sans", Arial, sans-serif;
+                    font-size: 30px;
+                    color: #ccc100;
+                    padding-left: 45% ;
+                    position: relative;
+                    }
+                }
+        }    
+    }        
+    .content {
+        margin-top: 10px;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-content: space-evenly;
+        height: auto;
+        width: auto;
+    }
+    .photo {
+        background-color: #1c4c55;
+        border: 10px solid #266874;
+        margin: 10px 0;
+        height: 500px;
+        width: 500px;
+    }
+}    
