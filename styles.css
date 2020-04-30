@@ -13,38 +13,32 @@ body {
   background-attachment: fixed;
 }
 
-.menu--links {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #266874;
-  padding: 10px;
-  animation: menuanimcolor 10s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
 .menu {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  justify-content: center;
+  border: 2px solid white;
 }
-
-.menu li {
+.menu .menu--links {
+  background-color: #266874;
+  padding: 10px;
+}
+.menu .menu--links .menu--logo {
+  border-radius: 50%;
+  height: 150px;
+  justify-self: center;
+}
+.menu .menu--links li {
   display: flex;
   align-items: center;
 }
-
-li a {
+.menu .menu--links li a {
   text-decoration: none;
   color: #ccc100;
   font-size: 25px;
   font-family: "Open-Sans", Arial, sans-serif;
-}
-
-.menu--logo {
-  border-radius: 50%;
-  border: 2px dashed #ccc100;
-  height: 150px;
 }
 
 .main {
@@ -99,9 +93,14 @@ li a {
   padding-left: 45%;
   position: relative;
 }
-.main .content {
-  margin-top: 10px;
-  width: 80%;
+.main .background-block-2 {
+  background-color: #ccc100;
+  width: 100%;
+  position: relative;
+  padding: 10px 0;
+}
+.main .background-block-2 .content {
+  width: 50%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -110,7 +109,7 @@ li a {
   height: auto;
   width: auto;
 }
-.main .photo {
+.main .background-block-2 .photo {
   background-color: #1c4c55;
   border: 10px solid #266874;
   margin: 10px 0;
