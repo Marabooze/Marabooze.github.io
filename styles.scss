@@ -21,21 +21,21 @@ body {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    justify-content: center;
-    border: 2px solid white;
     .menu--links {
         background-color: #266874;
-        padding: 10px;
-        .menu--logo {
+        padding: 10px; 
+        display: flex;
+        justify-content: space-evenly;
+        .menu--logo {      
             border-radius: 50%;
             height: 150px;
-            justify-self: center;
         }
         li {
+            width: 150px;       
             display: flex;
             align-items: center;
-            a {
+            justify-content: center;
+            a {          
                 text-decoration: none;
                 color: #ccc100;
                 font-size: 25px;
