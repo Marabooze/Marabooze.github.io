@@ -127,7 +127,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    width: 80%;
     padding: 0;
     height: auto;
     width: auto;
@@ -144,7 +143,6 @@ body {
   .main .content .column {
     display: flex;
     flex-direction: row;
-    width: 80%;
     align-self: center;
     justify-content: space-between;
   }
