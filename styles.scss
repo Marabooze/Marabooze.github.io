@@ -1,7 +1,7 @@
 
 .head {
     
-    background-color: #266874;
+    background-color: #266974;
     height:50%;
     width: 100%;
     padding: 0px;
@@ -22,7 +22,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     .menu--links {
-        background-color: #266874;
+        background-color: #266974;
         padding: 10px; 
         display: flex;
         justify-content: space-evenly;
@@ -37,7 +37,7 @@ body {
             justify-content: center;
             a {          
                 text-decoration: none;
-                color: #ccc100;
+                color: #fff977;
                 font-size: 25px;
                 font-family: "Open-Sans", Arial, sans-serif;
             }
@@ -52,7 +52,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     .background-block-1 {
-        background-color: rgb(180, 77, 80, 1);
+        background-color: #b44d4f;
         width: 100%;
         position: relative;
         .background-image-1 {
@@ -85,7 +85,7 @@ body {
                 .ahoodie {
                     font-family: "selimaregular", Arial, sans-serif;
                     font-size: 70px;
-                    color: #ccc100;
+                    color: #fff977;
                     text-align: center;
                     transform: rotate(-4deg);
                     height: 60px;
@@ -94,7 +94,7 @@ body {
                     position: absolute;
                     font-family: "Open-Sans", Arial, sans-serif;
                     font-size: 30px;
-                    color: #ccc100;
+                    color: #fff977;
                     padding-left: 45% ;
                     position: relative;
                     }
@@ -102,13 +102,13 @@ body {
         }    
     }  
     .background-block-2 {   
-        background-color: #ccc100;  
+        background-color: #fff577;  
         width: 100%;
         position: relative; 
         padding: 10px 0;
         .content {
             
-            width: 50%;
+            width: 80%;
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
@@ -116,13 +116,16 @@ body {
             align-content: space-evenly;
             height: auto;
             width: auto;
+            .column-2 {
+                align-self: center;
+            }
         }
         .photo {
             background-color: #1c4c55;
-            border: 10px solid #266874;
+            border: 10px solid #266974;
             margin: 10px 0;
-            height: 500px;
-            width: 500px;
+            height: 300px;
+            width: 300px;
         }
     }
 }    

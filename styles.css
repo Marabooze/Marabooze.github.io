@@ -1,5 +1,5 @@
 .head {
-  background-color: #266874;
+  background-color: #266974;
   height: 50%;
   width: 100%;
   padding: 0px;
@@ -19,7 +19,7 @@ body {
   margin-right: auto;
 }
 .menu .menu--links {
-  background-color: #266874;
+  background-color: #266974;
   padding: 10px;
   display: flex;
   justify-content: space-evenly;
@@ -36,7 +36,7 @@ body {
 }
 .menu .menu--links li a {
   text-decoration: none;
-  color: #ccc100;
+  color: #fff977;
   font-size: 25px;
   font-family: "Open-Sans", Arial, sans-serif;
 }
@@ -46,7 +46,7 @@ body {
   margin-right: auto;
 }
 .main .background-block-1 {
-  background-color: #b44d50;
+  background-color: #b44d4f;
   width: 100%;
   position: relative;
 }
@@ -80,7 +80,7 @@ body {
 .main .background-block-1 .logo .logo-font .ahoodie {
   font-family: "selimaregular", Arial, sans-serif;
   font-size: 70px;
-  color: #ccc100;
+  color: #fff977;
   text-align: center;
   transform: rotate(-4deg);
   height: 60px;
@@ -89,18 +89,18 @@ body {
   position: absolute;
   font-family: "Open-Sans", Arial, sans-serif;
   font-size: 30px;
-  color: #ccc100;
+  color: #fff977;
   padding-left: 45%;
   position: relative;
 }
 .main .background-block-2 {
-  background-color: #ccc100;
+  background-color: #fff577;
   width: 100%;
   position: relative;
   padding: 10px 0;
 }
 .main .background-block-2 .content {
-  width: 50%;
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -109,10 +109,13 @@ body {
   height: auto;
   width: auto;
 }
+.main .background-block-2 .content .column-2 {
+  align-self: center;
+}
 .main .background-block-2 .photo {
   background-color: #1c4c55;
-  border: 10px solid #266874;
+  border: 10px solid #266974;
   margin: 10px 0;
-  height: 500px;
-  width: 500px;
+  height: 300px;
+  width: 300px;
 }
