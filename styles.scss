@@ -22,9 +22,68 @@ body {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    
+    border: 2px solid red;
+    .burger{
+        width: 90px;
+        height: 90px;
+        display: none;
+        margin: auto;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        border: 2px solid red;
+        left: 0px;
+      }
+    .burger > span{
+        display: block;
+        position: relative;
+        width: 90%;
+        height: 10px;
+        margin: 15px auto;
+        background-color: #fff577;
+        border-radius: 10px;
+      }
+      
+    .burger > span#sp1{
+        transition: all .3s .5s;
+      }
+      
+    .burger > span#sp2{
+        transition: all .3s .3s;
+      }
+      
+    .burger > span#sp3{
+        transition: all .3s .1s;
+      }
+      
+    .burger.active > span#sp1{
+        width: 90%;
+        height: 90%;
+        margin: 5px auto;
+        transition: all .3s .1s;
+      }
+      
+    .burger.active > span#sp2{
+        background-color: #266974;
+        transform: translateY(-60px) rotateZ(45deg);
+        transition: all .3s .3s;
+      }
+      
+    .burger.active > span#sp3{
+        background-color: #266974;
+        transform: translateY(-85px) rotateZ(-45deg);
+        transition: all .3s .5s;
+      }
+    .logo {
+        display: none;
+        .logo-font {
+            display: none;
+        }
+    }
     .menu--links {
         background-color: #266974;
-        padding: 10px; 
+        padding: 10px;
         display: flex;
         justify-content: space-evenly;
         .menu--logo {      
@@ -38,7 +97,8 @@ body {
             justify-content: center;
             a {          
                 text-decoration: none;
-                color: #fff100;
+                color: #fff577;
+                font-weight: 600;
                 font-size: 25px;
                 font-family: "Open-Sans", Arial, sans-serif;
             }
@@ -51,8 +111,7 @@ body {
 
 .main {
     margin-left: auto;
-    margin-right: auto;
-     
+    margin-right: auto;    
     .background-block-1 {
         background-color: #b44d4f;
         width: 100%;
@@ -72,34 +131,6 @@ body {
             width: 100%;
             border: 2px solid deepskyblue;
             position: absolute;
-            .logo-font {
-                width: 350px;
-                height: 143px;
-                margin-left: auto;
-                margin-right: auto;
-                padding: 30px 0;
-                background-image: url(img/method-draw-image.svg);
-                background-repeat: no-repeat;
-                background-size: 100%;
-                background-position: bottom;
-
-                .ahoodie {
-                    font-family: "selimaregular", Arial, sans-serif;
-                    font-size: 70px;
-                    color: #fff977;
-                    text-align: center;
-                    transform: rotate(-4deg);
-                    height: 60px;
-                }
-                .net {
-                    position: absolute;
-                    font-family: "Open-Sans", Arial, sans-serif;
-                    font-size: 30px;
-                    color: #fff977;
-                    padding-left: 45% ;
-                    position: relative;
-                    }
-                }
         } 
     }    
     .background-block-2 {   
@@ -173,6 +204,29 @@ body {
 }      
 @media screen and (max-width: 768px)
               and (min-width: 320px) {
+    .menu {
+        width: 100%;
+        .menu--links {
+            display: none;
+        }
+        .burger {
+            display: inline-block;
+            margin: 10px;
+        }
+        .logo {
+            width: 100%;
+            border: 2px solid deepskyblue;
+            position: absolute;
+            display: inline-block;
+            img {
+                width: 100%;
+                height: 110px;
+                display: flex;
+                justify-self: center;
+                align-self: center;
+            }
+        } 
+    }             
     .main {
         .background-block-2 {
             .content {
