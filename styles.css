@@ -182,9 +182,10 @@ body {
     padding: 10px;
   }
 }
-@media screen and (max-device-width: 768px) and (min-width: 320px) {
+@media screen and (max-width: 768px) and (min-width: 320px) {
   .menu {
     width: 100%;
+    display: flex;
   }
   .menu .menu--links {
     display: none;
@@ -192,19 +193,18 @@ body {
   .menu .burger {
     display: inline-block;
     margin: 10px;
+    order: -1;
   }
   .menu .logo {
-    width: 100%;
     border: 2px solid deepskyblue;
-    position: absolute;
-    display: inline-block;
-  }
-  .menu .logo img {
-    width: 100%;
-    height: 110px;
     display: flex;
     justify-self: center;
-    align-self: center;
+    width: 80%;
+  }
+  .menu .logo img {
+    display: inline-block;
+    width: 100%;
+    height: 110px;
   }
 
   .main .background-block-2 .content {
