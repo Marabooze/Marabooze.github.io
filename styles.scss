@@ -7,6 +7,8 @@
     padding: 0px;
     position: relative;
     z-index: 999;
+    display: flex;
+    justify-content: center;
     
 }
 
@@ -14,72 +16,112 @@ body {
     background-image: url(img/Background2.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    
 
 }
 
+
+
+
+
+.menu-toggle{
+    display: none;
+    flex:0 0 auto;
+    width:40px;
+    height:40px;
+    border:1px solid #fff577;
+    cursor:pointer;
+    position:relative;
+    .hamburger,.cross{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+    }
+    .hamburger{
+        span{
+            display:block;
+            width:18px;
+            height:2px;
+            margin-bottom:3px;
+            overflow:hidden;
+            position:relative;
+        }
+        span:last-child{
+            margin:0;
+        }
+        span:before, span:after{
+            content:"";
+            position:absolute;
+            width:100%;
+            height:100%;
+            background-color:#fff577;
+            transform:translateX(-200%);
+            transition:transform ease 300ms;
+        }
+        span:after{
+            transform:translateX(0);
+        }
+        span:nth-child(2):before, span:nth-child(2):after{
+            transition-delay:75ms;
+        }
+        span:last-child:before, span:last-child:after{
+            transition-delay:150ms;
+        }
+    }
+}
+.menu-toggle:hover {
+    .hamburger { 
+        span:before{
+            transform:translateX(0);
+        }
+        span:after{
+            transform:translateX(200%);
+        }
+    }
+}
+.cross {
+    span{
+        display:block;
+        width:18px;
+        height:2px;
+        background-color:#fff577;
+        transform:translateY(50%) rotate(45deg) scaleX(0);
+        transition:transform ease 200ms;
+    }
+    span:last-child{
+        transform:translateY(-50%) rotate(-45deg) scaleX(0);
+    }
+}
+.menu-toggle.active {
+    .hamburger {
+        span:before{
+            transform:translateX(100%);
+        }
+        span:after{
+            transform:translateX(200%);
+        }
+    }
+    .cross {
+        span{
+            transition-delay:450ms;
+            transform:translateY(50%) rotate(45deg) scaleX(1);
+        }
+        span:last-child{
+            transform:translateY(-50%) rotate(-45deg) scaleX(1);
+        }
+    }
+}
+
+
+
+
+  
 .menu {
     visibility: visible;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    
-    border: 2px solid red;
-    .burger{
-        width: 90px;
-        height: 90px;
+    width: 80%; 
+    .logo.red {
         display: none;
-        margin: auto;
-        overflow: hidden;
-        cursor: pointer;
-        position: relative;
-        border: 2px solid red;
-        left: 0px;
-      }
-    .burger > span{
-        display: block;
-        position: relative;
-        width: 90%;
-        height: 10px;
-        margin: 15px auto;
-        background-color: #fff577;
-        border-radius: 10px;
-      }
-      
-    .burger > span#sp1{
-        transition: all .3s .5s;
-      }
-      
-    .burger > span#sp2{
-        transition: all .3s .3s;
-      }
-      
-    .burger > span#sp3{
-        transition: all .3s .1s;
-      }
-      
-    .burger.active > span#sp1{
-        width: 90%;
-        height: 90%;
-        margin: 5px auto;
-        transition: all .3s .1s;
-      }
-      
-    .burger.active > span#sp2{
-        background-color: #266974;
-        transform: translateY(-60px) rotateZ(45deg);
-        transition: all .3s .3s;
-      }
-      
-    .burger.active > span#sp3{
-        background-color: #266974;
-        transform: translateY(-85px) rotateZ(-45deg);
-        transition: all .3s .5s;
-      }
-    .logo {
-        display: none;
-        .logo-font {
-            display: none;
-        }
     }
     .menu--links {
         background-color: #266974;
@@ -115,24 +157,54 @@ body {
     .background-block-1 {
         background-color: #b44d4f;
         width: 100%;
+        display: flex;
         position: relative;
         .background-image-1 {
             width: 50%;
-            border: 2px solid yellow;
+            height: 100%;
             text-align: center;
-            align-self: flex-end;
+            align-self: center;
+            display: inline-block;
             img {
-                width: 65%;
+                width: 100%;
                 display: inline-block;
-                border: 2px solid green;
+                position: relative;
+                z-index: 1;
             }    
         }
-        .logo {
+        .text {
+            border-left: 5px solid #fff577;
+            z-index: 3;
+            margin: 10%;
+            width: 40%;
+            height: 100%;
+            justify-self: center;
+            color: #fff577;
+            font-weight: 500;
+            font-size: 2em;
+            font-family: "Open-Sans", Arial, sans-serif;
+            line-height: 1,5em;
+            padding: 1%;
+            align-self: center;
+            
+        }
+        .logo-container-blue {
+            display: flex;
             width: 100%;
-            border: 2px solid deepskyblue;
+            justify-content: center;
             position: absolute;
-        } 
-    }    
+            z-index: 0;
+            .logo-blue {
+                width: 40%;
+                position: absolute;
+                img {
+                    width: 100%;
+                    justify-self: center;
+                    
+                }
+            } 
+        }
+    }   
     .background-block-2 {   
         background-color: #fff577;  
         width: 100%;
@@ -147,15 +219,13 @@ body {
             
             flex-wrap: wrap;
             justify-content: space-between;
-            border: 2px solid green;
             .column {
-                padding: 0 10px;
+                padding: 10px 10px 0 10px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
                 width: 25%;
-                border: 2px solid red;
                 .photo {
                     background-color: #1c4c55;
                     border: 10px solid #266974;
@@ -172,7 +242,6 @@ body {
                 padding: 0;
                 .photo-large {
                     width: 100%;
-                    border: 2px solid red;
                     img {
                         width: 100%;
                         vertical-align: middle;
@@ -204,31 +273,57 @@ body {
 }      
 @media screen and (max-width: 768px)
               and (min-width: 320px) {
+    .head {
+        max-height: 60px;
+        padding: 0;
+        display: flex;      
+    }
     .menu {
-        width: 100%;
+        width: 200vw;
+        padding: 0;
+        margin: 0;
         display: flex;
+        
+        align-items: center;
         .menu--links {
             display: none;
         }
-        .burger {
-            display: inline-block;
+        .menu-toggle.empty {
+            display: block;
+            order: 2;
             margin: 10px;
-            order: -1;
+            visibility: hidden;
         }
-        .logo {
-            border: 2px solid deepskyblue;
+        .menu-toggle {
+            display: block;
+            order: -1;
+            margin: 10px;
+            justify-self: start;
+        }
+        .logo-container.red {
+            height: 60px;
             display: flex;
-            justify-self: center;
-            width: 80%;
-            img {
-                display: inline-block;
+            width: 100%;
+            order: 1;
+            .logo.red {
                 width: 100%;
-                height: 110px;
-                
+                display: inline-block;
+                transform: scale(0.8);
+                height: inherit;
+                img {
+                    height: inherit;
+                    width: 100%;
+                }
             }
+            
         } 
     }             
     .main {
+        .background-block-1 {
+            .text {
+                font-size: 1em;
+            }
+        }
         .background-block-2 {
             .content {
                 flex-direction: row;

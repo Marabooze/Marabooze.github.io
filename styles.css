@@ -5,6 +5,8 @@
   padding: 0px;
   position: relative;
   z-index: 999;
+  display: flex;
+  justify-content: center;
 }
 
 body {
@@ -13,62 +15,89 @@ body {
   background-attachment: fixed;
 }
 
+.menu-toggle {
+  display: none;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff577;
+  cursor: pointer;
+  position: relative;
+}
+.menu-toggle .hamburger, .menu-toggle .cross {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.menu-toggle .hamburger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin-bottom: 3px;
+  overflow: hidden;
+  position: relative;
+}
+.menu-toggle .hamburger span:last-child {
+  margin: 0;
+}
+.menu-toggle .hamburger span:before, .menu-toggle .hamburger span:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff577;
+  transform: translateX(-200%);
+  transition: transform ease 300ms;
+}
+.menu-toggle .hamburger span:after {
+  transform: translateX(0);
+}
+.menu-toggle .hamburger span:nth-child(2):before, .menu-toggle .hamburger span:nth-child(2):after {
+  transition-delay: 75ms;
+}
+.menu-toggle .hamburger span:last-child:before, .menu-toggle .hamburger span:last-child:after {
+  transition-delay: 150ms;
+}
+
+.menu-toggle:hover .hamburger span:before {
+  transform: translateX(0);
+}
+.menu-toggle:hover .hamburger span:after {
+  transform: translateX(200%);
+}
+
+.cross span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #fff577;
+  transform: translateY(50%) rotate(45deg) scaleX(0);
+  transition: transform ease 200ms;
+}
+.cross span:last-child {
+  transform: translateY(-50%) rotate(-45deg) scaleX(0);
+}
+
+.menu-toggle.active .hamburger span:before {
+  transform: translateX(100%);
+}
+.menu-toggle.active .hamburger span:after {
+  transform: translateX(200%);
+}
+.menu-toggle.active .cross span {
+  transition-delay: 450ms;
+  transform: translateY(50%) rotate(45deg) scaleX(1);
+}
+.menu-toggle.active .cross span:last-child {
+  transform: translateY(-50%) rotate(-45deg) scaleX(1);
+}
+
 .menu {
   visibility: visible;
   width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  border: 2px solid red;
 }
-.menu .burger {
-  width: 90px;
-  height: 90px;
-  display: none;
-  margin: auto;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-  border: 2px solid red;
-  left: 0px;
-}
-.menu .burger > span {
-  display: block;
-  position: relative;
-  width: 90%;
-  height: 10px;
-  margin: 15px auto;
-  background-color: #fff577;
-  border-radius: 10px;
-}
-.menu .burger > span#sp1 {
-  transition: all 0.3s 0.5s;
-}
-.menu .burger > span#sp2 {
-  transition: all 0.3s 0.3s;
-}
-.menu .burger > span#sp3 {
-  transition: all 0.3s 0.1s;
-}
-.menu .burger.active > span#sp1 {
-  width: 90%;
-  height: 90%;
-  margin: 5px auto;
-  transition: all 0.3s 0.1s;
-}
-.menu .burger.active > span#sp2 {
-  background-color: #266974;
-  transform: translateY(-60px) rotateZ(45deg);
-  transition: all 0.3s 0.3s;
-}
-.menu .burger.active > span#sp3 {
-  background-color: #266974;
-  transform: translateY(-85px) rotateZ(-45deg);
-  transition: all 0.3s 0.5s;
-}
-.menu .logo {
-  display: none;
-}
-.menu .logo .logo-font {
+.menu .logo.red {
   display: none;
 }
 .menu .menu--links {
@@ -102,23 +131,51 @@ body {
 .main .background-block-1 {
   background-color: #b44d4f;
   width: 100%;
+  display: flex;
   position: relative;
 }
 .main .background-block-1 .background-image-1 {
   width: 50%;
-  border: 2px solid yellow;
+  height: 100%;
   text-align: center;
-  align-self: flex-end;
+  align-self: center;
+  display: inline-block;
 }
 .main .background-block-1 .background-image-1 img {
-  width: 65%;
-  display: inline-block;
-  border: 2px solid green;
-}
-.main .background-block-1 .logo {
   width: 100%;
-  border: 2px solid deepskyblue;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+.main .background-block-1 .text {
+  border-left: 5px solid #fff577;
+  z-index: 3;
+  margin: 10%;
+  width: 40%;
+  height: 100%;
+  justify-self: center;
+  color: #fff577;
+  font-weight: 500;
+  font-size: 2em;
+  font-family: "Open-Sans", Arial, sans-serif;
+  line-height: 1, 5em;
+  padding: 1%;
+  align-self: center;
+}
+.main .background-block-1 .logo-container-blue {
+  display: flex;
+  width: 100%;
+  justify-content: center;
   position: absolute;
+  z-index: 0;
+}
+.main .background-block-1 .logo-container-blue .logo-blue {
+  width: 40%;
+  position: absolute;
+}
+.main .background-block-1 .logo-container-blue .logo-blue img {
+  width: 100%;
+  justify-self: center;
 }
 .main .background-block-2 {
   background-color: #fff577;
@@ -133,16 +190,14 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  border: 2px solid green;
 }
 .main .background-block-2 .content .column {
-  padding: 0 10px;
+  padding: 10px 10px 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 25%;
-  border: 2px solid red;
 }
 .main .background-block-2 .content .column .photo {
   background-color: #1c4c55;
@@ -160,7 +215,6 @@ body {
 }
 .main .background-block-2 .content .column1 .photo-large {
   width: 100%;
-  border: 2px solid red;
 }
 .main .background-block-2 .content .column1 .photo-large img {
   width: 100%;
@@ -183,30 +237,54 @@ body {
   }
 }
 @media screen and (max-width: 768px) and (min-width: 320px) {
-  .menu {
-    width: 100%;
+  .head {
+    max-height: 60px;
+    padding: 0;
     display: flex;
+  }
+
+  .menu {
+    width: 200vw;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
   }
   .menu .menu--links {
     display: none;
   }
-  .menu .burger {
-    display: inline-block;
+  .menu .menu-toggle.empty {
+    display: block;
+    order: 2;
     margin: 10px;
+    visibility: hidden;
+  }
+  .menu .menu-toggle {
+    display: block;
     order: -1;
+    margin: 10px;
+    justify-self: start;
   }
-  .menu .logo {
-    border: 2px solid deepskyblue;
+  .menu .logo-container.red {
+    height: 60px;
     display: flex;
-    justify-self: center;
-    width: 80%;
-  }
-  .menu .logo img {
-    display: inline-block;
     width: 100%;
-    height: 110px;
+    order: 1;
+  }
+  .menu .logo-container.red .logo.red {
+    width: 100%;
+    display: inline-block;
+    transform: scale(0.8);
+    height: inherit;
+  }
+  .menu .logo-container.red .logo.red img {
+    height: inherit;
+    width: 100%;
   }
 
+  .main .background-block-1 .text {
+    font-size: 1em;
+  }
   .main .background-block-2 .content {
     flex-direction: row;
     flex-direction: center;

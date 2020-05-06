@@ -7,20 +7,41 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script> 
+    <script src="parallax.js"></script>
   </head>
   <body>
       <header class="head">
          <nav class="menu">
-          <div class="logo">
+          <div class="logo-container red">
+            <div class="logo red">
               <img src="img/ahoodie-logo-font(red).svg" alt=""> 
+            </div>
           </div> 
-          <div id="burger" class="burger">
-            <span id="sp1"></span>
-            <span id="sp2"></span>
-            <span id="sp3"></span>
+          
+          <div class="menu-toggle">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="cross">
+                <span></span>
+                <span></span>
+            </div>
           </div>
-            
+          <div class="menu-toggle empty">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="cross">
+                <span></span>
+                <span></span>
+            </div>
+          </div>
+
           <ul class="menu--links">
             <li><a href="">ХУДИ</a></li>
             <li><a href="">КОСТЮМЫ</a></li>
@@ -31,7 +52,7 @@
          </nav>
       </header> 
       <main class="main">
-        <div class="background-block-2">  
+        <div class="background-block-2" id="background-block-2" >  
         <div class="content">
           <div class="column clumn2">
             <div class="photo"><img src="img/20200430_211143_0000.png" alt=""></div> 
@@ -46,15 +67,22 @@
           </div>
         </div>
         </div>
-        <div class="background-block-1">
-          <div class="logo">
-            <div class="logo-font">
-              <p class="ahoodie">A HOODIE</p>
-              <p class="net">N E T ?</p>   
+        <div class="background-block-1" id="background-block-1">
+          <div class="logo-container-blue">
+            <div class="logo-blue">
+              <img src="img/ahoodie-logo-font(blue).svg" alt=""> 
             </div>
           </div>
           <div class="background-image-1"><img src="img/Безымянный-12.svg"></div>
+          <div class="text">
+            <p>Псс... Дружочек-пирожочек, ищешь Ahoodie'нные шмотки?</p>
+            <br>
+            <p>Ты только глянь, что тут есть!</p>
+          </div>
         </div>
+
         
       </main>
+      <script src="script.js"></script>     
     </body>     
+    
