@@ -285,11 +285,12 @@ body {
   .main .background-block-1 {
     flex-direction: column;
     min-height: 100vh;
+    padding: 10px;
   }
   .main .background-block-1 .text {
     font-size: 1em;
-    width: 96%;
-    margin: 2%;
+    width: 100%;
+    padding: 10px;
   }
   .main .background-block-1 .logo-container-blue {
     position: relative;
