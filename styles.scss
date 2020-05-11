@@ -191,6 +191,7 @@ body {
         .logo-container-blue {
             display: flex;
             width: 100%;
+            margin-top: 10px;
             justify-content: center;
             position: absolute;
             z-index: 0;
@@ -227,13 +228,13 @@ body {
                 justify-content: center;
                 width: 25%;
                 .photo {
-                    background-color: #1c4c55;
-                    border: 10px solid #266974;
+                    
                     margin-bottom: 10px;
                     height: 50%;
                     width: 100%;
                     img {
                         vertical-align: middle;
+                        width: 100%;
                     }
                 }
             }
@@ -326,7 +327,12 @@ body {
             .text {
                 font-size: 1em;
                 width: 100%;
-                padding: 10px;
+                padding: 20px;
+                text-align: center;
+                font-weight: 100;
+                background-color: #00000080;
+                backdrop-filter: blur(4px);
+
             }
             .logo-container-blue {
                 position: relative;
@@ -349,23 +355,30 @@ body {
                 align-items: center;
                 
                 position: absolute;
-                img {
-                    
-                }
+                
             }
 
         }
         .background-block-2 {
             .content {
                 flex-direction: row;
-                flex-direction: center;
+                justify-content: space-around;
                 align-items: center;
                 .column {
-                    width: 100%;
+                    width: 50%;
                 }
                 .column1 {
                     order: -1;
+                    width: 100%;
                     padding: 10px;
+                    padding-bottom: 0;
+                    
+                }
+                .column2 {
+                    padding-right: 5px;
+                }
+                .column3 {
+                    padding-left: 5px;
                 }
             }
         }
